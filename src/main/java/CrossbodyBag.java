@@ -1,4 +1,4 @@
-/*
+ /*
  * This file is currently empty, but with a variety of TODOs to implement.
  * You may want to refer to HandBag.java to see how to structure your code.
  *
@@ -30,3 +30,26 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+public class CrossbodyBag extends Bag {
+
+    private int numberOfStraps;
+    public CrossbodyBag(String color, int capacity, int straps) {
+        super(color, capacity);
+        this.numberOfStraps = straps;
+    }
+
+    public int getNumberOfStraps() {
+        return this.numberOfStraps;
+    }
+
+    @Override
+    public void enhance() {
+        this.increaseCapacity(2);
+    }
+
+    @Override
+    public String toString() {
+        return super.getColor() + " Crossbody Bag with " + this.getNumberOfStraps() + " straps ("
+                + super.getNumberOfContents() + " / " + super.getCapacity() + ")";
+    }
+}
